@@ -1,0 +1,197 @@
+/* ---------- Nav Bar Links ---------- */
+
+#nav_horizontal ul {
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	background-color: #50961D;
+}
+
+#nav_horizontal li {
+	float: left;
+}
+
+#nav_horizontal li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+#nav_horizontal li a:hover {
+	background-color:#6D9C30;
+}
+
+#nav_horizontal {
+	font-family: 'quicksand';
+	font-weight: 900;
+	
+}
+
+/* ---------- More Information and Edit Price Links ---------- */
+
+a:link {
+	color: black;
+	text-decoration: underline;
+}
+a:visited {
+	color: black;
+}
+
+a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+/* ---------- Forms ---------- */
+
+input[type=submit] {
+    width: 100%;
+    background-color:#50961D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	font-family: 'quicksand';
+	font-size: 110%;
+}
+
+input:hover {
+    background-color: lightgrey;
+}
+
+/* ---------- Header ----------*/
+
+#header {
+
+    text-align:center;
+	padding: 5px;
+	font-family:'quicksand-bold';
+	color:white;
+	background-color:#6D9C30;
+	font-size:150%;
+}
+
+/* ---------- Page Background Pattern and Page Padding ---------- */
+
+#wholepage {
+	padding: 10px;
+	background-color: #fff; 
+	background-image: 
+	linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+	linear-gradient(#eee .1em, transparent .1em);
+	background-size: 100% 1.2em;
+}
+
+/* ---------- All Content ---------- */
+
+#pagecontent {
+    width: 1000px;
+	height: auto;
+    margin: 0 auto;
+    /*- box-shadow: 10px 10px 10px black; -*/
+	font-family: 'quicksand';
+	background-color:#5FCAF9;
+	font-size: 110%;
+
+}
+
+/* ---------- Style for selected divs and words ---------- */
+
+#invalid-information {
+	text-align: center;
+}
+
+#invalid-information a {
+	width: 100%;
+    background-color: grey;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	font-family: 'quicksand';
+	font-size: 110%;
+	text-decoration: none;
+}
+
+#invalid-information a:hover {
+	background-color:lightgrey;
+}
+
+#purchasing-thanks {
+	text-align: center;
+}
+
+#new-invoice {
+	font-family: 'quicksand';
+	line-height: 200%;
+}
+
+/* ---------- Importing the fonts and applying them to some pages ---------- */
+
+@font-face {
+	font-family: 'quicksand';
+	src: url('Quicksand-Regular.otf');
+}
+@font-face {
+	font-family: 'quicksand-bold';
+	src: url('Quicksand-Bold.otf');
+}
+#valve_description {
+	font-family: 'quicksand';
+}
+
+#customer_details {
+	font-family: 'quicksand';
+}
+
+}
+
+h1, h2, h3, label, #nav, #footer {
+	font-family: 'quicksand';
+	
+}
+
+/* ---------- Section that contains the content ---------- */
+
+#section {
+    width:auto;
+	min-height: 750px;
+    float:;
+    padding: 20px;
+	color:white;
+	background-color:#5ca02a;
+	
+}
+
+/* ---------- Buttons ---------- */
+
+#button {
+    background-color:#6D9C30;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	font-family: 'quicksand';
+	font-size: 110%;
+}
+
+/* ---------- Footer ---------- */
+
+#footer {
+    background-color: #50961D;
+    color: white;
+    clear:both;
+    text-align:center;
+	padding:20px;
+	padding:20px;
+	font-family: 'quicksand';
+}

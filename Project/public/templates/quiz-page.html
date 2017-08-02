@@ -1,0 +1,20 @@
+{% extends "base-template.html" %}
+
+{% block content %}
+
+<form id="user-question" action="quiz-page" method="post">
+{% for questions in questions %}
+	<div style="margin-left: 1em;"> <!-- Lists all the valves in a checklist type order, when a user selects a valve the 'valve' name will have the value of the valve that he/she selected -->
+	
+		<input type="hidden" style="text-align:center;" id="questions" value="{{ questions.question }}">{{ questions.question }}<br>
+		<br>
+		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_one'] }}"><br>
+		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_two'] }}"><br>
+		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_three'] }}"><br>
+		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_four'] }}"><br>
+		
+	</div>
+{% endfor %}
+</form>
+
+{% endblock %}
