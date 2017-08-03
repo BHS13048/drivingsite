@@ -30,34 +30,12 @@
 	
 }
 
-/* ---------- More Information and Edit Price Links ---------- */
-
-a:link {
-	color: black;
-	text-decoration: underline;
-}
-a:visited {
-	color: black;
-}
-
-a:hover {
-	color: blue;
-	text-decoration: underline;
-}
-
 /* ---------- Forms ---------- */
 
-input[type=submit] {
-    width: 100%;
-    background-color:#50961D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-	font-family: 'quicksand';
-	font-size: 110%;
+
+}
+input.incorrect{
+	background-color: red;
 }
 
 input:hover {
@@ -69,17 +47,18 @@ input:hover {
 #header {
 
     text-align:center;
-	padding: 5px;
+	height: 550px;
+	padding: 20px;
 	font-family:'quicksand-bold';
 	color:white;
-	background-color:#6D9C30;
 	font-size:150%;
+    background-image:url("/static/images/home.png");     /* : linear-gradient(#1D6EAA, #1D6EAA, #83C3F2);*/
 }
 
 /* ---------- Page Background Pattern and Page Padding ---------- */
 
 #wholepage {
-	padding: 10px;
+	padding: 40px;
 	background-color: #fff; 
 	background-image: 
 	linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
@@ -90,9 +69,9 @@ input:hover {
 /* ---------- All Content ---------- */
 
 #pagecontent {
-    width: 1000px;
-	height: auto;
-    margin: 0 auto;
+	height:auto;
+    width: 750px;
+    margin:auto;
     /*- box-shadow: 10px 10px 10px black; -*/
 	font-family: 'quicksand';
 	background-color:#5FCAF9;
@@ -101,37 +80,6 @@ input:hover {
 }
 
 /* ---------- Style for selected divs and words ---------- */
-
-#invalid-information {
-	text-align: center;
-}
-
-#invalid-information a {
-	width: 100%;
-    background-color: grey;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-	font-family: 'quicksand';
-	font-size: 110%;
-	text-decoration: none;
-}
-
-#invalid-information a:hover {
-	background-color:lightgrey;
-}
-
-#purchasing-thanks {
-	text-align: center;
-}
-
-#new-invoice {
-	font-family: 'quicksand';
-	line-height: 200%;
-}
 
 /* ---------- Importing the fonts and applying them to some pages ---------- */
 
@@ -161,28 +109,66 @@ h1, h2, h3, label, #nav, #footer {
 /* ---------- Section that contains the content ---------- */
 
 #section {
-    width:auto;
-	min-height: 750px;
+    width:0 auto;
+	height: 450px;
     float:;
     padding: 20px;
 	color:white;
 	background-color:#5ca02a;
 	
 }
+#question {
+	width:0 auto;
+	text-align:center;
+	height: 450px;
+	padding: 20px;
+	font-family:'quicksand-bold';
+	color:white;
+	font-size:300%;
+    /* background: linear-gradient(blue, white); */
+	background-image:url("/static/images/quizpage.gif");
 
-/* ---------- Buttons ---------- */
+}	
 
-#button {
-    background-color:#6D9C30;
+#questions {
+	margin: 5%;
+	font-weight: bold;
+	color: #000000;
+	margin: 30px;
+	background-color: #ffffff;
+	opacity: 0.6;
+}
+
+
+#answers {
+	width:0 auto;
+	height:550px;
+	float:center;
+	padding:10px;
+	color:white;
+	background-color:#5ca02a;
+}
+
+}
+#user-question {
+	width:0 auto;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color:#50961D;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding:40px;
+    margin: 5px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
 	font-family: 'quicksand';
 	font-size: 110%;
-}
+	float:center;
+/* ---------- Buttons ---------- */
+
+
 
 /* ---------- Footer ---------- */
 

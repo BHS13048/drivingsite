@@ -1,20 +1,33 @@
-{% extends "base-template.html" %}
+<!doctype html>
+<html id="wholepage">
+<div id="pagecontent">
+	<head>
+	<link rel="stylesheet" href="/static/css/style.css">
+	</head>
 
-{% block content %}
+	<body>
 
-<form id="user-question" action="quiz-page" method="post">
-{% for questions in questions %}
-	<div style="margin-left: 1em;"> <!-- Lists all the valves in a checklist type order, when a user selects a valve the 'valve' name will have the value of the valve that he/she selected -->
+		<form id="user-question" action="quiz-page" method="post">
+		{% for questions in questions %}
+
+			<div id="question">
+				<center><input type="hidden" id="questions" value="{{ questions.question }}">{{ questions.question }}</center>
+			</div>
+			<div id="answers"> <!-- Lists all the valves in a checklist type order, when a user selects a valve the 'valve' name will have the value of the valve that he/she selected -->
+				<input id="button" class="{% if active=='correct' %}active{%endif %}" class="{% if active=='incorrect' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_one'] }}"><br>
+				<input id="button" class="{% if active=='correct' %}active{%endif %}" class="{% if active=='incorrect' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_two'] }}"><br>
+				<input id="button" class="{% if active=='correct' %}active{%endif %}" class="{% if active=='incorrect' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_three'] }}"><br>
+				<input id="button" class="{% if active=='correct' %}active{%endif %}" class="{% if active=='incorrect' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_four'] }}"><br>
+			</div>
+		{% endfor %}
+		</form>
+
+	</body>
 	
-		<input type="hidden" style="text-align:center;" id="questions" value="{{ questions.question }}">{{ questions.question }}<br>
-		<br>
-		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_one'] }}"><br>
-		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_two'] }}"><br>
-		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_three'] }}"><br>
-		<input class="{% if active=='user_answer' %}active{%endif %}" type="submit" name="answer" value="{{ questions['answer_four'] }}"><br>
-		
-	</div>
-{% endfor %}
-</form>
+	
 
-{% endblock %}
+  
+</div>
+</html>
+
+
