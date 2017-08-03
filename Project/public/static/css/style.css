@@ -18,12 +18,28 @@ input:hover {
 #header {
 
     text-align:center;
-	height: 550px;
-	padding: 20px;
+	height: 22.7em;
+
 	font-family:'quicksand-bold';
 	color:white;
 	font-size:150%;
     background-image:url("/static/images/home.png");     /* : linear-gradient(#1D6EAA, #1D6EAA, #83C3F2);*/
+}
+#quizbutton {
+    width: 100%;
+    background-color:#50961D;
+    color: white;
+    padding:20px 55px ;
+    margin: auto 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+	font-family: 'quicksand';
+	font-size: 150%;
+	float:center;
+}
+#quizbutton:hover {
+	background-color:#89BB64;
 }
 
 /* ---------- Page Background Pattern and Page Padding ---------- */
@@ -40,14 +56,14 @@ input:hover {
 /* ---------- All Content ---------- */
 
 #pagecontent {
-	height:auto;
+	height:100%;
     width: 750px;
     margin:auto;
     /*- box-shadow: 10px 10px 10px black; -*/
 	font-family: 'quicksand';
 	background-color:#5FCAF9;
 	font-size: 110%;
-
+	
 }
 
 /* ---------- Style for selected divs and words ---------- */
@@ -81,7 +97,7 @@ h1, h2, h3, label, #nav, #footer {
 
 #section {
     width:0 auto;
-	height: 450px;
+	height: 40%;
     float:;
     padding: 20px;
 	color:white;
@@ -113,7 +129,7 @@ h1, h2, h3, label, #nav, #footer {
 
 #answers {
 	width:0 auto;
-	height:570px;
+	height:55%;
 	float:center;
 	padding:10px;
 	color:white;
