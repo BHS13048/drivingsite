@@ -49,7 +49,7 @@ def quiz_page():
             one=True
         )
         #if user_answer == correct_answer:
-        return render_template('quiz-page.html', questions=query_results, active='user_answer')
+        return render_template('quiz-page.html', i=query_result, active='user_answer')
         #else:
             #return render_template('index.html')
     

@@ -1,34 +1,5 @@
-/* ---------- Nav Bar Links ---------- */
+/* ---------- Home Buttons ---------- */
 
-#nav_horizontal ul {
-	list-style-type: none;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	background-color: #50961D;
-}
-
-#nav_horizontal li {
-	float: left;
-}
-
-#nav_horizontal li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-#nav_horizontal li a:hover {
-	background-color:#6D9C30;
-}
-
-#nav_horizontal {
-	font-family: 'quicksand';
-	font-weight: 900;
-	
-}
 
 /* ---------- Forms ---------- */
 
@@ -120,7 +91,7 @@ h1, h2, h3, label, #nav, #footer {
 #question {
 	width:0 auto;
 	text-align:center;
-	height: 450px;
+	height: 350px;
 	padding: 20px;
 	font-family:'quicksand-bold';
 	color:white;
@@ -142,7 +113,7 @@ h1, h2, h3, label, #nav, #footer {
 
 #answers {
 	width:0 auto;
-	height:550px;
+	height:570px;
 	float:center;
 	padding:10px;
 	color:white;
@@ -158,7 +129,7 @@ input[type=submit] {
     width: 100%;
     background-color:#50961D;
     color: white;
-    padding:40px;
+    padding:55px;
     margin: 5px 0;
     border: none;
     border-radius: 8px;
@@ -166,6 +137,7 @@ input[type=submit] {
 	font-family: 'quicksand';
 	font-size: 110%;
 	float:center;
+}
 /* ---------- Buttons ---------- */
 
 
