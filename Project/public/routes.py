@@ -18,14 +18,14 @@ def home_page():
     query_results = datamanager.query_db(query_string, [], one=False)
     return render_template('index.html', questions=query_results)
 
-@website.route('/quiz-page', methods=['GET', 'POST'])#name that the base-template calls for when the link is clicked
+@website.route('/quiz-page/<question_no>', methods=['GET', 'POST'])#name that the base-template calls for when the link is clicked
 def quiz_page():
     print(request.method)
     if request.method == 'GET':
         query_string = (
             'SELECT question, answer_one, answer_two, answer_three, answer_four '
             'FROM questions '
-            'ORDER BY question_no ASC '
+            'WHERE question_no = ?'
         )
         query_results = datamanager.query_db(query_string, [], one=False)        
         return render_template('quiz-page.html', questions=query_results)
@@ -37,9 +37,6 @@ def quiz_page():
         
         #expected data
         query_string = ( #places variable contents into the database under the correct tables and columns
-            'SELECT question, answer_one, answer_two, answer_three, answer_four, correct_answer, user_answer '
-            'FROM questions, users '
-            'ORDER BY question_no ASC '
             'INSERT INTO users( user_answer ) '
             'VALUES (?)'
         )
