@@ -15,6 +15,7 @@ def home_page():
         'SELECT question, answer_one, answer_two, answer_three, answer_four '
         'FROM questions '
     )
+    question_no = 1
     query_results = datamanager.query_db(query_string, [], one=False)
     return render_template('index.html', questions=query_results)
 
@@ -27,6 +28,7 @@ def quiz_page():
             'FROM questions '
             'WHERE question_no = ?'
         )
+        question_no = '1'
         query_results = datamanager.query_db(query_string, [], one=False)        
         return render_template('quiz-page.html', questions=query_results)
     
