@@ -1,19 +1,22 @@
 from flask import Flask, render_template, request
 import random, copy
-turns = 15
+turns = 10
 correct = 0
 current_question = ""
 
 app = Flask(__name__)
 
 original_questions = {
-	'Where is the Taj Mahal?':['Agra','New Delhi','Mumbai','Chennai'],
-	'Where is the Great Wall of China?':['China','Beijing','Shanghai','Tianjin'],
-	'Where is Petra?':['Ma\'an Governorate','Amman','Zarqa','Jerash'],
-	'Where is Machu Picchu?':['Cuzco Region','Lima','Piura','Tacna'],
- 	'Where are the Egypt Pyramids?':['Giza','Suez','Luxor','Tanta'],
-	'Whrere is the Colosseum?':['Rome','Milan','Bari','Bologna'],
-	'Where is Christ the Redeemer?':['Rio de Janeiro','Natal','Olinda','Betim']
+	'What must you do when red lights are flasking at a railway level crossing?':['Stop unti the lights stop flashing','Check both sides and cross if no trains are coming','Go as soon as the train has passed'],
+	'You can park on a dashed yellow line on the side of the road':['True','False'],
+	'What must you do when turning right at a roundabout?':['Indicate right as you approach, then left before you exit','Indicate right the whole way around the roundabout','Don\'t indiate right as you approach, but indicate right once on the roundabout','Stay left as you enter the roundabout'],
+	'New Zealand\'s road signs are shown in:':['Kilometres per hour','Shown in Miles per hour'],
+ 	'Who is responsible for making sure passengers below the age of 16 have their seatbelts on?':['Mum','Dad','The driver','Yourself, doesn\'t matter how old you are'],
+	'What must you do at a pedestrian crossing?':['Just wait until there are no pedestrians on your side of the crossing','Make sure pedestrians are completely off the road before crossing','Continue, the pedestrians will wait for you'],
+	'What must you do if you are looking for something and travelling well below the speed limit?':['Move to the side to let traffic flow behind you','Continue at the same speed and block traffic flow'],
+	'At an uncontrolled intersection, when you are travelling straight you must give way to who?':['Traffic on the right','Traffic on the left','All'],
+	'What must you do if you\'re driving and become sleepy?':['Pull over as soon as possible and take a break','Open the window','Speed up to keep up your brain activity'],
+	'Can you pass other traffic over a solid yellow line?':['No, that is very dangerous','Yes, if there is 100m of clear space and there is enough space beside to pass without crossing the yellow line','Yellow Lines are the same as white lines']
 }
 
 questions = copy.deepcopy(original_questions)
@@ -31,12 +34,12 @@ def quiz():
 	global turns
 	global current_question
 	if turns == 0:
-		turns = 15
+		turns = 10
 		return render_template('index.html')
 	else:
 		turns = turns - 1
 		print(turns)
-		current_question = random.choice(list(original_questions)) #calls for definition, substitutes q for questions.
+		current_question = random.choice(list(questions)) #calls for definition, substitutes q for questions.
 		#print(current_question)
 		print(current_question)
 		for i in questions:
@@ -49,10 +52,13 @@ def quiz():
 @app.route('/quiz_test', methods=['POST'])
 def quiz_answers():
 	global correct
+	global current_question
 	for i in questions.keys():
 		user_answer = request.form.get("answer")
 		if original_questions[i][0] == user_answer:
 			correct = correct + 1
+	questions.pop(current_question, None)
+	print(questions)
 	print(correct)
 	return quiz()
 	#'<h1>Correct Answers: <u>'+str(correct)+'</u></h1>'
