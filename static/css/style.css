@@ -37,8 +37,7 @@ input:hover {
 	font-family: 'quicksand';
 	font-size: 150%;
 	float:center;
-	word-wrap: break-word;
-	text-justify:inter-word;
+
 }
 #quizbutton:hover {
 	background-color:#89BB64;
@@ -128,12 +127,13 @@ h1, h2, h3, label, #nav, #footer {
 
 #answers {
 	width:0 auto;
-	height:55%;
+	height:550px;
 	float:center;
 	padding:10px;
 	color:white;
 	background-color:#5ca02a;
 	word-wrap: break-word;
+	text-justify:inter-word;
 }
 
 }

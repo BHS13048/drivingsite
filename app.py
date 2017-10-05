@@ -22,11 +22,15 @@ original_questions = {
 questions = copy.deepcopy(original_questions)
 #function shuffles q - questions is later substituted in order to shuffle the questions.
 
+
+
 #home page
 @app.route('/')
 def home_page():
 	print('gets to the index page')
 	return render_template('index.html')
+
+
 
 @app.route('/quiz')
 def quiz():
@@ -34,37 +38,38 @@ def quiz():
 	global questions
 	global turns
 	global current_question
+	global correct_answer
 	if turns == 0 or questions == {}:
 		turns = 10
+		correct_answer = ""
 		questions = copy.deepcopy(original_questions)
 		return render_template('index.html')
 	else:
 		turns = turns - 1
 		print(turns)
-		print(questions)
-		current_question = random.choice(list(questions)) #calls for definition, substitutes q for questions.
-		#print(current_question)
-		print(current_question)
+		current_question = random.choice(list(original_questions)) 
+		print("1" + current_question)
 		for i in questions:
 			random.shuffle(questions[i])
-		print('gets to this stage')
-
- #removes the question from the dictionary - currently not working as it also removes the multiple choices
 		return render_template('quiz-page.html', q = current_question, o = questions)
+
+
 
 @app.route('/quiz_test', methods=['POST'])
 def quiz_answers():
 	global correct
 	global current_question
+
 	for i in questions.keys():
 		user_answer = request.form.get("answer")
+		correct_answer = original_questions[i][0]
 		if original_questions[i][0] == user_answer:
 			correct = correct + 1
 	questions.pop(current_question, None)
-	print(questions)
-	print(correct)
-	return quiz()
+	return render_template('answer-page.html', a = user_answer, c = correct_answer, q = current_question)
 	#'<h1>Correct Answers: <u>'+str(correct)+'</u></h1>'
+
+
 
 if __name__ == '__main__':
 	app.run(debug=True)
