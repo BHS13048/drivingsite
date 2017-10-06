@@ -68,10 +68,9 @@ def quiz_answers():
 	else:
 		print("incorrect answer")
 
-	#questions.pop(current_question, None)
+	questions.pop(current_question, None)
 	print(correct)
 	return render_template('answer-page.html', a = user_answer, c = correct_answer, q = current_question)
-	#'<h1>Correct Answers: <u>'+str(correct)+'</u></h1>'
 
 
 

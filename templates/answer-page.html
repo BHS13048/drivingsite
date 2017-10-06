@@ -8,17 +8,18 @@
 
 	<body>
 
-		<form method="get" action="/answer_page">
+		<form method="get" action="/quiz">
 
 			<div id="question">
 				<center><p> {{ q }} </p></center>
 			</div>
 
 			<div id="answers"> 
-				<center><p> abc {{ a }} </p></center>
-				<center><p> def {{ c }} </p></center>
+				<center><p> Your Answer: {{ a }} </p></center>
+				<center><p> Correct Answer: {{ c }} </p></center>
+				<button  id="quizbutton" type="submit"><h1 style="font-size:180%; font-family: 'quicksand-bold';">Move to Next Question</h1></button>
 			</div>
-	
+
 		</form>
 
 	</body>
