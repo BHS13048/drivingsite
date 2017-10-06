@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 original_questions = {
 	'What must you do when red lights are flashing at a railway level crossing?':['Stop unti the lights stop flashing','Check both sides and cross if no trains are coming','Go as soon as the train has passed'],
-	'You can park on a dashed yellow line on the side of the road':['True','False'],
+	'You can park on a dashed yellow line on the side of the road':['False','True'],
 	'What must you do when turning right at a roundabout?':['Indicate right as you approach, then left before you exit','Indicate right the whole way around the roundabout','Don\'t indiate right as you approach, but indicate right once on the roundabout','Stay left as you enter the roundabout'],
 	'New Zealand\'s road signs are shown in:':['Kilometres per hour','Shown in Miles per hour'],
  	'Who is responsible for making sure passengers below the age of 16 have their seatbelts on?':['Mum','Dad','The driver','Yourself, doesn\'t matter how old you are'],
@@ -47,8 +47,8 @@ def quiz():
 	else:
 		turns = turns - 1
 		print(turns)
-		current_question = random.choice(list(original_questions)) 
-		print("1" + current_question)
+		current_question = random.choice(list(questions)) 
+		print(current_question)
 		for i in questions:
 			random.shuffle(questions[i])
 		return render_template('quiz-page.html', q = current_question, o = questions)
@@ -59,13 +59,17 @@ def quiz():
 def quiz_answers():
 	global correct
 	global current_question
+	possible_answers = list(original_questions[current_question])
+	user_answer = request.form.get("answer")
+	correct_answer = original_questions[current_question][0]
+	if correct_answer == user_answer:
+		correct = correct + 1
+		print("correct answer")
+	else:
+		print("incorrect answer")
 
-	for i in questions.keys():
-		user_answer = request.form.get("answer")
-		correct_answer = original_questions[i][0]
-		if original_questions[i][0] == user_answer:
-			correct = correct + 1
-	questions.pop(current_question, None)
+	#questions.pop(current_question, None)
+	print(correct)
 	return render_template('answer-page.html', a = user_answer, c = correct_answer, q = current_question)
 	#'<h1>Correct Answers: <u>'+str(correct)+'</u></h1>'
 
