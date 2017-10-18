@@ -129,6 +129,19 @@ input[type=submit] {
 	float:center;
 }
 
+#answerpageanswers {
+    width: 600px;
+    background-color:#50961D;
+    color: white;
+    padding:55px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+	font-family: 'quicksand';
+	font-size: 110%;
+	float:center;
+}
+
 #quizbutton {
     width: 100%;
     background-color:#50961D;
