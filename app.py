@@ -25,7 +25,7 @@ questions = copy.deepcopy(original_questions)
 #home page - page that opens at start, has link to quiz page
 @app.route('/')
 def home_page():
-	print('gets to the index page')
+#	print('gets to the index page') - used for checking
 	return render_template('index.html')
 
 #quiz page - asks user questions, tells the user when and when they don't get the answer correct
@@ -45,7 +45,7 @@ def quiz():
 		turns = turns - 1
 		print(turns)
 		current_question = random.choice(list(questions)) 
-		print(current_question)
+#		print(current_question) - used while checking for bugs
 		for i in questions:
 			random.shuffle(questions[i])
 		return render_template('quiz-page.html', q = current_question, o = questions)
@@ -57,7 +57,11 @@ def quiz_answers():
 	global correct
 	global current_question
 	possible_answers = list(original_questions[current_question])
+
+	#retrieving data from html
 	user_answer = request.form.get("answer")
+
+	#checks whether the user got the answer correct by comparing with correct answer from original questions list
 	correct_answer = original_questions[current_question][0]
 	if correct_answer == user_answer:
 		correct = correct + 1
@@ -65,8 +69,13 @@ def quiz_answers():
 	else:
 		print("incorrect answer")
 
+	#removes the current question from the list, original questions list remains the same
 	questions.pop(current_question, None)
+
+	#updates every time the user has answered correctly
 	print(correct)
+
+	#redirects to the answer page to show the user whether they got the answer correct and what the actual correct answer is
 	return render_template('answer-page.html', a = user_answer, c = correct_answer, q = current_question)
 
 
