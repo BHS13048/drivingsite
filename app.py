@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request
 import random, copy
+
+#variables used all over programme
 turns = 10
 correct = 0
 current_question = ""
 
+#start
 app = Flask(__name__)
 
-#question list
+#question list - first answer in each square bracked is the correct answer, used to check if the user has got each question correct
 original_questions = {
 	'What must you do when red lights are flashing at a railway level crossing?':['Stop unti the lights stop flashing','Check both sides and cross if no trains are coming','Go as soon as the train has passed'],
 	'You can park on a dashed yellow line on the side of the road':['False','True'],
@@ -31,54 +34,49 @@ def home_page():
 #quiz page - asks user questions, tells the user when and when they don't get the answer correct
 @app.route('/quiz')
 def quiz():
-	print('gets here')
-	global questions
-	global turns
-	global current_question
-	global correct_answer
+
+	#importing global variables as they are used in other definitions as well
+	global questions, turns, current_question, current_answer
+
+	#checks to see how many questions the user is yet to answer, if none then redirect to home and reset
 	if turns == 0 or questions == {}:
 		turns = 10
 		correct_answer = ""
 		questions = copy.deepcopy(original_questions)
 		return render_template('index.html')
+	#if the user still has turns left, take away a turn and carry on
 	else:
 		turns = turns - 1
 		print(turns)
+		#selects randon question from questions
 		current_question = random.choice(list(questions)) 
-#		print(current_question) - used while checking for bugs
+		#print(current_question) - used while checking for bugs
+		#shuffle the answers that the user gets to choose from
 		for i in questions:
 			random.shuffle(questions[i])
 		return render_template('quiz-page.html', q = current_question, o = questions)
 
 
-
+#
 @app.route('/quiz_test', methods=['POST'])
 def quiz_answers():
-	global correct
-	global current_question
-	possible_answers = list(original_questions[current_question])
-
+	global correct, current_question
 	#retrieving data from html
 	user_answer = request.form.get("answer")
-
 	#checks whether the user got the answer correct by comparing with correct answer from original questions list
 	correct_answer = original_questions[current_question][0]
 	if correct_answer == user_answer:
 		correct = correct + 1
-		print("correct answer")
-	else:
-		print("incorrect answer")
-
+	#lines used for checking if the solution worked
+		#print("correct answer")
+	#else:
+		#print("incorrect answer")
 	#removes the current question from the list, original questions list remains the same
 	questions.pop(current_question, None)
-
 	#updates every time the user has answered correctly
 	print(correct)
-
 	#redirects to the answer page to show the user whether they got the answer correct and what the actual correct answer is
 	return render_template('answer-page.html', a = user_answer, c = correct_answer, q = current_question)
-
-
 
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -23,9 +23,8 @@ input:hover {
 	font-family:'quicksand-bold';
 	color:white;
 	font-size:150%;
-    background-image:url("/static/images/home.png");     /* : linear-gradient(#1D6EAA, #1D6EAA, #83C3F2);*/
+    background-image:url("/static/images/home.png");
 }
-
 
 /* ---------- Page Background Pattern and Page Padding ---------- */
 
@@ -42,7 +41,6 @@ input:hover {
     margin:auto;
     /*- box-shadow: 10px 10px 10px black; -*/
 	font-family: 'quicksand';
-	background-color:#5FCAF9;
 	font-size: 110%;
 	
 }
@@ -130,7 +128,7 @@ input[type=submit] {
 }
 
 #answerpageanswers {
-    width: 600px;
+    width: 0 auto;
     background-color:#50961D;
     color: white;
     padding:55px;
