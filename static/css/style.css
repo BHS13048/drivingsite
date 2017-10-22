@@ -1,48 +1,22 @@
-/* ---------- Home Buttons ---------- */
+/* -- Whole Page -- */
 
-
-/* ---------- Forms ---------- */
-
-
-}
-input.incorrect{
-	background-color: red;
-}
-
-input:hover {
-    background-color: lightgrey;
-}
-
-/* ---------- Header ----------*/
-
-#header {
-
-    text-align:center;
-	height: 22.7em;
-
-	font-family:'quicksand-bold';
-	color:white;
-	font-size:150%;
-    background-image:url("/static/images/home.png");
-}
-
-/* ---------- Page Background Pattern and Page Padding ---------- */
-
-#wholepage {
-	padding: 40px;
-	background-color: #50961d;
-}
-
-/* ---------- All Content ---------- */
-
-#pagecontent {
-	height:100%;
-    width: 750px;
+#homepagecontent, #quizpagecontent {
+	background-size:auto;
+	height:968px;
+    width: 1366px;
     margin:auto;
-    /*- box-shadow: 10px 10px 10px black; -*/
+    box-shadow: 10px 10px 10px lightgrey;
 	font-family: 'quicksand';
 	font-size: 110%;
-	
+
+}
+
+#homepagecontent {
+	background-image:url("/static/images/hometest.gif");
+}
+
+#quizpagecontent {
+	background-image:url("/static/images/quizpage.gif");
 }
 
 /* ---------- Importing the fonts and applying them to some pages ---------- */
@@ -61,40 +35,29 @@ h1, h2, h3, label {
 	
 }
 
-/* ---------- Section that contains the content ---------- */
+/* ---------- Headers ----------*/
 
-#section {
-    width:0 auto;
-	height: 40%;
-    float:;
-    padding: 20px;
+#homeheader {
+	height: 52.5%;
+	font-family:'quicksand-bold';
 	color:white;
-	background-color:#5ca02a;
-
-/* ------------ Other Sections ------------ */
-
+	font-size:150%;
 }
+
 #question {
 	width:0 auto;
 	text-align:center;
-	height: 350px;
+	height: 410px;
 	padding: 20px;
 	font-family:'quicksand-bold';
 	color:white;
 	font-size:250%;
-	background-image:url("/static/images/quizpage.gif");
 	word-wrap: break-word;
 
 }	
 
-#questions {
-	margin: 5%;
-	font-weight: bold;
-	color: #000000;
-	margin: 30px;
-	background-color: #ffffff;
-	opacity: 0.6;
-}
+
+/* -- Sections that displays question and contents -- */
 
 
 #answers {
@@ -102,34 +65,11 @@ h1, h2, h3, label {
 	height:600px;
 	float:center;
 	padding:10px;
-	color:white;
-	background-color:#5ca02a;
-	word-wrap: break-word;
-	text-justify:inter-word;
-}
-
-}
-#user-question {
-	width:0 auto;
-}
-
-input[type=submit] {
-    width: 100%;
-    background-color:#50961D;
-    color: white;
-    padding:55px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-	font-family: 'quicksand';
-	font-size: 110%;
-	float:center;
 }
 
 #answerpageanswers {
     width: 0 auto;
-    background-color:#50961D;
+    background-color:#326023;
     color: white;
     padding:55px;
     margin: 5px 0;
@@ -140,11 +80,20 @@ input[type=submit] {
 	float:center;
 }
 
-#quizbutton {
+#section {
+    width:0 auto;
+	height: 40%;
+    float:;
+    padding: 20px;
+	color:white;
+}
+
+/* -- Buttons -- */
+
+#quizbutton, #answerbuttons {
     width: 100%;
-    background-color:#50961D;
+    background-color:#326023;
     color: white;
-    padding:20px 55px ;
     margin: 5px 0;
     border: none;
     border-radius: 8px;
@@ -152,25 +101,16 @@ input[type=submit] {
 	font-family: 'quicksand';
 	font-size: 200%;
 	float:center;
-
 }
-#quizbutton:hover {
+
+#quizbutton:hover, #answerbuttons:hover {
 	background-color:#89BB64;
 }
 
+#quizbutton {
+	padding:20px 55px;
+}
 
-/* ---------- Buttons ---------- */
-
-
-
-/* ---------- Footer ---------- */
-
-#footer {
-    background-color: #50961D;
-    color: white;
-    clear:both;
-    text-align:center;
-	padding:20px;
-	padding:20px;
-	font-family: 'quicksand';
+#answerbuttons {
+	padding:37.5px 55px;
 }
