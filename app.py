@@ -19,7 +19,7 @@ original_questions = {
  	'Who is responsible for making sure passengers below the age of 16 have their seatbelts on?':['The driver','Mum','Dad','Yourself, doesn\'t matter how old you are'],
 	'What must you do at a pedestrian crossing?':['Just wait until there are no pedestrians on your side of the crossing','Make sure pedestrians are completely off the road before crossing','Continue, the pedestrians will wait for you'],
 	'What must you do if you are looking for something, there is traffic behind you, and travelling well below the speed limit?':['Move to the side to let traffic flow behind you','Continue at the same speed and block traffic flow'],
-	'At an uncontrolled intersection, when you are travelling straight you must give way to who?':['Traffic on the right','Traffic on the left','All'],
+	'At a roundabout with no give way signs or stop signs on all sides, and you are travelling straight you must give way to who?':['Traffic on the right','Traffic on the left','All'],
 	'What must you do if you\'re driving and become sleepy?':['Pull over as soon as possible and take a break','Open the window','Speed up to keep up your brain activity'],
 	'Can you pass other traffic over a solid yellow line?':['Yes, if there is 100m of clear space and there is enough space beside to pass without crossing the yellow line','No, that is very dangerous','Yellow Lines are the same as white lines']
 }
@@ -29,9 +29,10 @@ questions = copy.deepcopy(original_questions)
 #home page - page that opens at start, has link to quiz page
 @app.route('/')
 def home_page():
-	global correct, turns
+	global correct, turns, question_no
 	turns = 10
 	correct = 0
+	question_no = 0
 #	print('gets to the index page') - used for checking
 	return render_template('index.html')
 
