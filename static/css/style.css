@@ -67,9 +67,9 @@ h1, h2, h3, label {
 	padding:10px;
 }
 
-#answerpageanswers {
+#answerpageanswers, #incorrectanswerpageanswers {
     width: 0 auto;
-    background-color:#326023;
+
     color: white;
     padding:55px;
     margin: 5px 0;
@@ -78,19 +78,27 @@ h1, h2, h3, label {
 	font-family: 'quicksand';
 	font-size: 110%;
 	float:center;
+	margin-bottom: 10px;  
+}
+
+#answerpageanswers {
+    background-color:#326023;
+}
+
+#incorrectanswerpageanswers {
+    background-color:#951f1d;
 }
 
 #section {
     width:0 auto;
 	height: 40%;
-    float:;
     padding: 20px;
 	color:white;
 }
 
 /* -- Buttons -- */
 
-#quizbutton, #answerbuttons {
+#quizbutton, #answerbuttons, #nextquestion {
     width: 100%;
     background-color:#326023;
     color: white;
@@ -99,18 +107,25 @@ h1, h2, h3, label {
     border-radius: 8px;
     cursor: pointer;
 	font-family: 'quicksand';
-	font-size: 200%;
+
 	float:center;
 }
 
-#quizbutton:hover, #answerbuttons:hover {
+#quizbutton:hover, #answerbuttons:hover, #nextquestion:hover {
 	background-color:#89BB64;
 }
 
 #quizbutton {
-	padding:20px 55px;
+	padding:105px;
+	font-size: 200%;
 }
 
 #answerbuttons {
-	padding:37.5px 55px;
+	padding:46px 55px;
+	font-size: 120%;
+
+}
+
+#nextquestion {
+	padding:70px;
 }

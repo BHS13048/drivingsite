@@ -72,11 +72,13 @@ def quiz_answers():
 	#else:
 		#print("incorrect answer")
 	#removes the current question from the list, original questions list remains the same
-	questions.pop(current_question, None)
+		questions.pop(current_question, None)
 	#updates every time the user has answered correctly
-	print(correct)
+		print(correct)
 	#redirects to the answer page to show the user whether they got the answer correct and what the actual correct answer is
-	return render_template('answer-page.html', a = user_answer, c = correct_answer, q = current_question)
-
+		return render_template('answer-page-correct.html', a = user_answer, c = correct_answer, q = current_question)
+	else:
+		questions.pop(current_question, None)
+		return render_template('answer-page-incorrect.html', a = user_answer, c = correct_answer, q = current_question)
 if __name__ == '__main__':
 	app.run(debug=True)
