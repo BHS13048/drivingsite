@@ -17,7 +17,7 @@ original_questions = {
 	'What must you do when turning right at a roundabout?':['Indicate right as you approach, then left before you exit','Indicate right the whole way around the roundabout','Don\'t indiate right as you approach, but indicate right once on the roundabout','Stay left as you enter the roundabout'],
 	'New Zealand\'s road signs are shown in:':['Kilometres per hour','Shown in Miles per hour'],
  	'Who is responsible for making sure passengers below the age of 16 have their seatbelts on?':['The driver','Mum','Dad','Yourself, doesn\'t matter how old you are'],
-	'What must you do at a pedestrian crossing?':['Just wait until there are no pedestrians on your side of the crossing','Make sure pedestrians are completely off the road before crossing','Continue, the pedestrians will wait for you'],
+	'What must you do at a pedestrian crossing with an island?':['Just wait until there are no pedestrians on your side of the crossing','Make sure pedestrians are completely off the road before crossing','Continue, the pedestrians will wait for you'],
 	'What must you do if you are looking for something, there is traffic behind you, and travelling well below the speed limit?':['Move to the side to let traffic flow behind you','Continue at the same speed and block traffic flow'],
 	'At a roundabout with no give way signs or stop signs on all sides, and you are travelling straight you must give way to who?':['Traffic on the right','Traffic on the left','All'],
 	'What must you do if you\'re driving and become sleepy?':['Pull over as soon as possible and take a break','Open the window','Speed up to keep up your brain activity'],
