@@ -59,6 +59,10 @@ h1, h2, h3, label {
 
 /* -- Sections that displays question and contents -- */
 
+#questionno {
+	color:white;
+	font-size:110%;
+}
 
 #answers {
 	width:0 auto;
@@ -127,5 +131,5 @@ h1, h2, h3, label {
 }
 
 #nextquestion {
-	padding:70px;
+	padding:40px;
 }

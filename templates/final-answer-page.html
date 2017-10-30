@@ -9,19 +9,17 @@
 
 	<body>
 
-		<form method="get" action="/quiz">
+		<form method="get" action="/">
 
 			<div id="question">
-				<center><p id="questionno"> Question No: {{ n }} </p></center>
-				<center><p> {{ q }} </p></center>
+
 			</div>
 
 			<div > 
 
 			</div>
 			<div id="answers"> 
-				<center><p id="incorrectanswerpageanswers"> Your Answer: {{ a }} </p></center> <!-- gets the user answer from app.py -->
-				<center><p id="answerpageanswers"> Correct Answer: {{ c }} </p></center> <!-- gets the correct answer form app.py -->
+				<center><p id="answerpageanswers"> You got {{ c }} answers correct out of 10.</p></center> <!-- gets the user answer from app.py -->
 				<button  id="nextquestion" type="submit"><h1 style="font-size:180%; font-family: 'quicksand-bold';">Move to Next Question</h1></button>
 			</div>
 
