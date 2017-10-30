@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 #question list - first answer in each square bracked is the correct answer, used to check if the user has got each question correct
 original_questions = {
-	'What must you do when red lights are flashing at a railway level crossing?':['Stop unti the lights stop flashing','Check both sides and cross if no trains are coming','Go as soon as the train has passed'],
+	'What must you do when red lights are flashing at a railway level crossing?':['Stop until the lights stop flashing','Check both sides and cross if no trains are coming','Go as soon as the train has passed'],
 	'You can park on a dashed yellow line on the side of the road':['False','True'],
 	'What must you do when turning right at a roundabout?':['Indicate right as you approach, then left before you exit','Indicate right the whole way around the roundabout','Don\'t indiate right as you approach, but indicate right once on the roundabout','Stay left as you enter the roundabout'],
 	'New Zealand\'s road signs are shown in:':['Kilometres per hour','Shown in Miles per hour'],
